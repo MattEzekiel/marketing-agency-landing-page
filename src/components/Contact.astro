@@ -1,0 +1,128 @@
+<form id="contact-form" class="w-full block">
+    <div class="mb-5">
+        <label for="name" class="mb-1 block">Nombre</label>
+        <input type="text" name="name" id="name" class="bg-gray-200 rounded block w-full py-2 px-3 disabled:cursor-not-allowed disabled:opacity-60">
+    </div>
+    <div class="mb-5">
+        <label for="email" class="mb-1 block">Email</label>
+        <input type="email" name="email" id="email" class="bg-gray-200 rounded block w-full py-2 px-3 disabled:cursor-not-allowed disabled:opacity-60">
+    </div>
+    <div class="mb-5">
+        <label for="message" class="mb-1 block">Mensaje</label>
+        <textarea name="message" id="message" class="bg-gray-200 rounded block w-full py-2 px-3 disabled:cursor-not-allowed disabled:opacity-60"></textarea>
+    </div>
+    <div class="mb-5">
+        <button type="submit" class="bg-sky-500 hover:bg-sky-700 transition-colors duration-300 text-white block md:w-fit w-full py-2 px-10 font-semibold rounded md:ml-auto disabled:cursor-not-allowed disabled:opacity-60">Enviar</button>
+    </div>
+</form>
+<script>
+    const form = document.querySelector('#contact-form');
+    form.addEventListener('submit',handleSubmit);
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        removeError();
+
+        const nameInput = document.querySelector('#name');
+        const emailInput = document.querySelector('#email');
+        const messageInput = document.querySelector('#message');
+        const errors = [];
+
+        const name = nameInput.value.trim();
+        const email = emailInput.value.trim();
+        const message = messageInput.value.trim();
+
+        if (name === '') {
+            displayError('Por favor ingrese un nombre', nameInput);
+            errors.push('error');
+        }
+
+        if (email === '') {
+            displayError('Por favor ingrese un email', emailInput);
+            errors.push('error');
+        }else if (!isValidEmail(email)) {
+            displayError('Por favor ingrese un email válido', emailInput);
+            errors.push('error');
+        }
+
+        if (message === '') {
+            displayError('Escriba un mensaje', messageInput);
+            errors.push('error');
+        }
+
+        if (errors.length) return;
+
+        const url = '/mail/mail.php';
+        // TODO: Crear esto
+        return;
+
+        disableInputs();
+        try {
+            const response = await fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({
+                    name,
+                    email,
+                    message,
+                }),
+                headers: {'Content-Type': 'application/json; charset=utf-8'},
+            });
+            const result = await response.json();
+            if (result.success) {
+                nameInput.value = '';
+                emailInput.value = '';
+                messageInput.value = '';
+                messageSend();
+            } else {
+                displayError(result.message, nameInput);
+            }
+        } catch (err) {
+            console.error(err);
+            displayError('Ocurrió un error al intentar enviar el mensaje. Vuelva a intentarlo', nameInput);
+        } finally {
+            enableInputs();
+        }
+    }
+
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    function displayError(message, input) {
+        const errorParagraph = document.createElement('p');
+        errorParagraph.textContent = message;
+        errorParagraph.classList.add('text-red-700', 'bg-red-200', 'rounded', 'p-3','error-contact','mb-3');
+        input.parentNode.insertAdjacentElement('afterbegin', errorParagraph);
+    }
+
+    function messageSend() {
+        const form = document.querySelector('#contact-form');
+        const successParagraph = document.createElement('p');
+        successParagraph.textContent = 'Mensaje enviado exitosamente';
+        successParagraph.classList.add('text-green-700', 'bg-green-200', 'rounded', 'p-3');
+        form.insertAdjacentElement('afterbegin', successParagraph);
+
+        setTimeout(() => {
+            successParagraph.remove();
+        }, 6000)
+    }
+
+    function removeError() {
+        const errorsMessages = document.querySelectorAll('.error-contact');
+
+        errorsMessages.forEach(error => error.remove());
+    }
+
+    function disableInputs() {
+        const inputs = document.querySelectorAll('input, textarea, button[type="submit"]');
+
+        inputs.forEach(input => input.setAttribute('disabled', 'disabled'));
+    }
+
+    function enableInputs() {
+        const inputs = document.querySelectorAll('input, textarea, button[type="submit"]');
+
+        inputs.forEach(input => input.removeAttribute('disabled'));
+    }
+</script>

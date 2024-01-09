@@ -5,14 +5,15 @@ import ListGridContainer from "../components/ListGridContainer.astro";
 import ListGridItem from "../components/ListGridItem.astro";
 import ArticleContainer from "../components/ArticleContainer.astro";
 import ArticleItem from "../components/ArticleItem.astro";
+import Contact from "../components/Contact.astro";
 const companies = ['lorem1','lorem2','lorem3'];
 ---
 <Main>
     <Hero />
-    <section class="py-20">
+    <section class="md:py-20 pt-10">
         <div class="container mx-auto px-5">
             <h2 class="text-center text-3xl font-semibold">Somos su principal socio para el éxito</h2>
-            <p class="mt-5 text-center text-balance lg:max-w-[800px] mx-auto">Dirigir un negocio no es una tarea fácil, especialmente cuando se trata de marketing. Es por eso que estamos aquí para ofrecerle nuestra experiencia y apoyo en consultoría de marketing.</p>
+            <p class="mt-5 text-center text-balance md:max-w-[800px] mx-auto">Dirigir un negocio no es una tarea fácil, especialmente cuando se trata de marketing. Es por eso que estamos aquí para ofrecerle nuestra experiencia y apoyo en consultoría de marketing.</p>
         </div>
     </section>
     <section class="container mx-auto px-5 pt-10 pb-20">
@@ -38,12 +39,21 @@ const companies = ['lorem1','lorem2','lorem3'];
     </section>
     <section class="py-20">
         <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-semibold mb-10">Clientes que confiaron</h2>
+            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left">Clientes que confiaron</h2>
             <ListGridContainer>
                 {companies.map((data, index) => (
                   <ListGridItem src={`/assets/images/company-${index + 1}.webp`} alt={data} />
                 ))}
             </ListGridContainer>
+        </div>
+    </section>
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-5 flex flex-col-reverse md:grid md:grid-cols-2 gap-10">
+            <Contact />
+            <div class="md:mt-4">
+                <h2 class="text-4xl font-semibold mb-10">Contactanos ahora</h2>
+                <p>Llena el siguiente formulario para ponerte en contacto con nosotros.</p>
+            </div>
         </div>
     </section>
 </Main>
