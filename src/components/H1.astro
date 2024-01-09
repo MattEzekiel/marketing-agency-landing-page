@@ -1,8 +1,22 @@
-<h1 class="md:max-w-[50%] text-white text-balance mb-10 lg:text-6xl md:text-5xl text-4xl font-semibold">Impulsa tu estrategia de marketing</h1>
+<div class="md:max-w-[50%] text-white text-balance mb-10 md:text-6xl text-5xl font-semibold relative">
+    <h1 class="md:opacity-0">Impulsa tu estrategia de marketing</h1>
+    <span id="typing" class="absolute top-0 md:block hidden"></span>
+</div>
+<script>
+    const span = document.querySelector('#typing');
+    const h1 = document.querySelector('h1');
+    const h1Peaces = h1.textContent.split('');
+
+    for (let i = 0; i < h1Peaces.length; i++) {
+        setTimeout(() => {
+            span.textContent += h1Peaces[i];
+        },100 * i)
+    }
+</script>
 <!-- Styles -->
 <style>
     @media screen and (min-width: 768px) {
-        h1 {
+        div > * {
             line-height: 4rem;
         }
     }
