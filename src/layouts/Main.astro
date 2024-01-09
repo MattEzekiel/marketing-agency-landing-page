@@ -1,3 +1,6 @@
+---
+import CompanyLogo from "../components/CompanyLogo.astro";
+---
 <!doctype html>
 <html lang="es">
 <head>
@@ -7,7 +10,13 @@
     <meta name="description" content="">
     <title>Consultora</title>
 </head>
-<body>
+<body class="bg-white">
     <slot />
+<footer class="bg-gray-800 p-10">
+    <div class="container mx-auto flex justify-between items-center">
+        <CompanyLogo />
+        <p class="text-white">Derechos reservados &copy; {new Date().getFullYear()}</p>
+    </div>
+</footer>
 </body>
 </html>

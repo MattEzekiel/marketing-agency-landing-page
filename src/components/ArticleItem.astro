@@ -1,0 +1,42 @@
+---
+interface Props {
+    src: string,
+    alt: string,
+    title: string,
+    subtitle: string,
+}
+
+const { src, alt, title, subtitle } = Astro.props;
+---
+<li>
+    <article>
+        <picture class="block rounded w-full h-screen mx-auto">
+            <source srcset={`${src}.webp`} />
+            <img src={`${src}.jpg`} alt={alt} />
+        </picture>
+        <h3 class="text-white text-balance text-center text-2xl my-5">{title}</h3>
+        <p class="text-gray-200 text-center text-balance">{subtitle}</p>
+    </article>
+</li>
+<style>
+    article {
+        max-width: 300px;
+    }
+
+    picture {
+        max-width: 400px;
+        object-fit: cover;
+        object-position: center;
+        aspect-ratio: 1/2;
+        max-height: 200px;
+        overflow: hidden;
+    }
+
+    img {
+        transition: all 0.3s ease-in-out;
+    }
+
+    article:hover img {
+        transform: scale(1.1);
+    }
+</style>

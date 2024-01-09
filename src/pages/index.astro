@@ -1,7 +1,49 @@
 ---
 import Main from '../layouts/Main.astro';
-import H1 from '../components/H1.astro';
+import Hero from '../components/Hero.astro';
+import ListGridContainer from "../components/ListGridContainer.astro";
+import ListGridItem from "../components/ListGridItem.astro";
+import ArticleContainer from "../components/ArticleContainer.astro";
+import ArticleItem from "../components/ArticleItem.astro";
+const companies = ['lorem1','lorem2','lorem3'];
 ---
 <Main>
-    <H1 />
+    <Hero />
+    <section class="py-20">
+        <div class="container mx-auto px-5">
+            <h2 class="text-center text-3xl font-semibold">Somos su principal socio para el éxito</h2>
+            <p class="mt-5 text-center text-balance lg:max-w-[800px] mx-auto">Dirigir un negocio no es una tarea fácil, especialmente cuando se trata de marketing. Es por eso que estamos aquí para ofrecerle nuestra experiencia y apoyo en consultoría de marketing.</p>
+        </div>
+    </section>
+    <section class="container mx-auto px-5 pt-10 pb-20">
+        <h2 class="sr-only">Nuestra experiencia, historial y estrategias de marketing</h2>
+        <ListGridContainer>
+            <ListGridItem src="/assets/images/star-filled.svg" alt="Star" subtitle="18+ años de experiencia" />
+            <ListGridItem src="/assets/images/award-filled.svg" alt="Award" subtitle="Historial comprobado de aumento de los ingresos de clientes" />
+            <ListGridItem src="/assets/images/thumb-up-filled.svg" alt="Like" subtitle="Estrategias de marketing personalizadas para cada negocio." />
+        </ListGridContainer>
+    </section>
+    <section class="py-20 bg-gray-600">
+        <div class="container mx-auto px-5">
+            <h2 class="text-center text-4xl font-semibold text-white mb-10">Servicios</h2>
+            <ArticleContainer>
+                <ArticleItem src="/assets/images/pexels" alt="Estrategis personalizadas" title="Estategia de marketig digital" subtitle="Elabore estrategias personalizadas para impulsar su presencia en línea e impulsar la participación del cliente." />
+                <ArticleItem src="/assets/images/pexels-stats" alt="Gestión redes sociales" title="Gestión de Redes Sociales" subtitle="Adminstre su presencia en las redes sociales, cree contenido atractivo e interactúe con su audiencia de manera efectiva." />
+                <ArticleItem src="/assets/images/pexels-content" alt="Creación de contenidos" title="Creación y curación de contenidos" subtitle="Desarrolle contenido de alta caldiad que cautive a su público objetivo y establezca la autoridad de su marca." />
+                <ArticleItem src="/assets/images/pexels-campagn" alt="Campañas" title="Campañas de publicidad online" subtitle="Cree y optimice campañas publicitarias en línea dirigidas para llegar a sus clientes ideales y maximizar el retorne de la inversión." />
+                <ArticleItem src="/assets/images/pexels-campagn" alt="Campañas" title="Campañas de publicidad online" subtitle="Cree y optimice campañas publicitarias en línea dirigidas para llegar a sus clientes ideales y maximizar el retorne de la inversión." />
+                <ArticleItem src="/assets/images/pexels-brand" alt="Impulsar marca" title="Impulsa tu marca: consultoría de marketing" subtitle="Una empresa de consultoría de marketing ofrece asesoramiento y orientación profesional a empresas que buscan mejorar sus estrategias de marketing y aumentar el conocimiendo de su marca." />
+            </ArticleContainer>
+        </div>
+    </section>
+    <section class="py-20">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-semibold mb-10">Clientes que confiaron</h2>
+            <ListGridContainer>
+                {companies.map((data, index) => (
+                  <ListGridItem src={`/assets/images/company-${index + 1}.webp`} alt={data} />
+                ))}
+            </ListGridContainer>
+        </div>
+    </section>
 </Main>

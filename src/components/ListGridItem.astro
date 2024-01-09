@@ -1,0 +1,15 @@
+---
+interface Props {
+    alt: string,
+    src: string,
+    subtitle?: string,
+}
+
+const { subtitle, src, alt } = Astro.props;
+---
+<li class="p-5">
+    <img class="w-full max-w-[100px] mx-auto" src={src} alt={alt}>
+    {subtitle ? (
+            <h3 class="text-2xl mt-5 text-center text-pretty font-semibold">{subtitle}</h3>
+    ): null}
+</li>
