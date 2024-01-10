@@ -6,7 +6,7 @@ import ListGridItem from "../components/ListGridItem.astro";
 import ArticleContainer from "../components/ArticleContainer.astro";
 import ArticleItem from "../components/ArticleItem.astro";
 import Contact from "../components/Contact.astro";
-const companies = ['maria-t','ras','club-spa','o3','alma-loft'];
+const companies = ['club-spa', 'maria-t','ras','o3','alma-loft'];
 ---
 <Main>
     <Hero />
@@ -40,11 +40,16 @@ const companies = ['maria-t','ras','club-spa','o3','alma-loft'];
     <section class="py-20">
         <div class="container mx-auto px-5">
             <h2 class="text-4xl font-semibold mb-10 text-center md:text-left">Proyectos y casos de éxito</h2>
-            <ListGridContainer>
+            <div class="flex flex-wrap justify-between items-center">
                 {companies.map((data) => (
-                  <ListGridItem src={`/assets/images/${data}.webp`} alt={data} />
+                    <figure>
+                        <picture>
+                            <img class="max-w-[200px] max-h-[100px] object-contain object-center" src={`/assets/images/${data}.webp`} alt={data}>
+                        </picture>
+                        <figcaption class="sr-only">{data} que confía en nosotros</figcaption>
+                    </figure>
                 ))}
-            </ListGridContainer>
+            </div>
         </div>
     </section>
     <section id="contact" class="py-20">
