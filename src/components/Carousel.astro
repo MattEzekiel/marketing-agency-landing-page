@@ -1,14 +1,41 @@
 ---
-const companies = ['club-spa', 'maria-t','ras','o3','alma-loft', 'flow-bliss', 'walmart'];
+const companies = [{
+    name: 'club-spa',
+    link: 'https://spaoasis.com.ar/'
+}, {
+    name: 'maria-t',
+    link: 'https://www.mariatboticario.shop/'
+},{
+    name: 'bas',
+    link: 'https://basdancewear.com.ar/'
+},{
+    name: 'o3',
+    link: 'https://www.ozonelifestyle.com/'
+},{
+    name: 'alma-loft',
+    link: 'https://www.almaloft.com/'
+}, {
+    name: 'flow-bliss',
+    link: 'https://flowandbliss.com/'
+}, {
+    name: 'walmart',
+    link: 'https://www.walmart.com/'
+}, {
+    name: 'harren-media',
+    link: 'https://harrenmedia.com/'
+}
+];
 ---
 <div class="owl-carousel owl-theme cursor-grab active:cursor-grabbing relative">
     {companies.map((data) => (
-        <figure class="item">
-            <picture>
-                <img class="max-w-[200px] max-h-[100px] object-contain object-center" src={`/assets/images/${data}.webp`} alt={data}>
-            </picture>
-            <figcaption class="sr-only">{data} que confía en nosotros</figcaption>
-        </figure>
+        <a href={data.link} target="_blank" rel="noreferrer" referrerpolicy="no-referrer">
+            <figure class="item">
+                <picture>
+                    <img class="max-w-[200px] max-h-[100px] object-contain object-center" src={`/assets/images/${data.name}.webp`} alt={data.name}>
+                </picture>
+                <figcaption class="sr-only">{data.name} que confía en nosotros</figcaption>
+            </figure>
+        </a>
     ))}
 </div>
 <style>
