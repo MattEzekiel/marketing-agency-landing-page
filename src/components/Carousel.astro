@@ -28,8 +28,8 @@ const companies = [{
 ---
 <div class="owl-carousel owl-theme cursor-grab active:cursor-grabbing relative">
     {companies.map((data) => (
-        <a class="group" href={data.link} target="_blank" rel="noreferrer" referrerpolicy="no-referrer">
-            <figure class="item w-fit">
+        <a class="group grid items-center" href={data.link} target="_blank" rel="noreferrer" referrerpolicy="no-referrer">
+            <figure class="item w-fit mx-auto">
                 <picture class="flex items-center justify-center w-fit">
                     <img class="max-w-[200px] max-h-[100px] object-contain object-center group-hover:shadow-xl transition duration-300" src={`/assets/images/${data.name}.webp`} alt={data.name}>
                 </picture>
@@ -54,6 +54,7 @@ const companies = [{
         autoplayTimeout:4000,
         autoplayHoverPause:true,
         rtl:true,
+        responsiveClass:true,
         responsive:{
             0:{
                 items:1
