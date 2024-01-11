@@ -1,0 +1,27 @@
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    background: none !important;
+}
+
+.owl-prev {
+    right: 0;
+}
+
+.owl-next {
+    left: 0;
+}
+
+.owl-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.owl-nav span {
+    display: block;
+    padding: 1rem;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 3px;
+}

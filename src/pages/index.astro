@@ -6,7 +6,7 @@ import ListGridItem from "../components/ListGridItem.astro";
 import ArticleContainer from "../components/ArticleContainer.astro";
 import ArticleItem from "../components/ArticleItem.astro";
 import Contact from "../components/Contact.astro";
-const companies = ['club-spa', 'maria-t','ras','o3','alma-loft'];
+import Carousel from "../components/Carousel.astro";
 ---
 <Main>
     <Hero />
@@ -37,27 +37,20 @@ const companies = ['club-spa', 'maria-t','ras','o3','alma-loft'];
             </ArticleContainer>
         </div>
     </section>
-    <section class="py-20">
+    <section class="py-20 bg-[rgb(10,73,110)] relative">
+        <div class="absolute top-0 bottom-0 right-0 left-0 w-full h-full bg-[rgb(10,73,110)] z-0 skew-y-[1deg] origin-top-right md:block hidden"></div>
         <div class="container mx-auto px-5">
-            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left text-balance">Proyectos y casos de éxito</h2>
-            <div class="flex flex-wrap md:flex-row flex-col md:justify-between justify-center items-center gap-10">
-                {companies.map((data) => (
-                    <figure>
-                        <picture>
-                            <img class="max-w-[200px] max-h-[100px] object-contain object-center" src={`/assets/images/${data}.webp`} alt={data}>
-                        </picture>
-                        <figcaption class="sr-only">{data} que confía en nosotros</figcaption>
-                    </figure>
-                ))}
-            </div>
+            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left text-balance text-white">Proyectos y casos de éxito</h2>
+            <Carousel />
         </div>
     </section>
-    <section id="contact" class="py-20">
-        <div class="container mx-auto px-5 flex flex-col-reverse md:grid md:grid-cols-2 gap-10">
+    <section id="contact" class="py-20 relative">
+        <div class="absolute top-0 bottom-0 right-0 left-0 w-full h-[100px] bg-[rgb(10,73,110)] z-0 skew-y-[0.5deg] origin-top-right md:block hidden"></div>
+        <div class="container mx-auto px-5 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:mt-20">
             <Contact />
             <div class="md:mt-4">
-                <h2 class="text-4xl font-semibold mb-10 text-balance">Varias mentes piensan mejor que una</h2>
-                <p>Contactame y comencemos una conversación que desafíe el status quo.</p>
+                <h2 class="text-4xl font-semibold mb-10">Contacto</h2>
+                <p class="text-pretty">Varias mentes piensan mejor que una. Contactame y comencemos una conversación que desafíe el status quo.</p>
             </div>
         </div>
     </section>
