@@ -28,10 +28,10 @@ const companies = [{
 ---
 <div class="owl-carousel owl-theme cursor-grab active:cursor-grabbing relative">
     {companies.map((data) => (
-        <a href={data.link} target="_blank" rel="noreferrer" referrerpolicy="no-referrer">
-            <figure class="item">
-                <picture>
-                    <img class="max-w-[200px] max-h-[100px] object-contain object-center" src={`/assets/images/${data.name}.webp`} alt={data.name}>
+        <a class="group" href={data.link} target="_blank" rel="noreferrer" referrerpolicy="no-referrer">
+            <figure class="item w-fit">
+                <picture class="flex items-center justify-center w-fit">
+                    <img class="max-w-[200px] max-h-[100px] object-contain object-center group-hover:shadow-xl transition duration-300" src={`/assets/images/${data.name}.webp`} alt={data.name}>
                 </picture>
                 <figcaption class="sr-only">{data.name} que confía en nosotros</figcaption>
             </figure>

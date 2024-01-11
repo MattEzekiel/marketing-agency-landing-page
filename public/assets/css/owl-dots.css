@@ -25,3 +25,8 @@
     background-color: rgba(255,255,255,0.5);
     border-radius: 3px;
 }
+
+.owl-stage {
+    display: flex;
+    align-items: center;
+}
