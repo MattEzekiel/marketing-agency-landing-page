@@ -16,27 +16,37 @@ This website is built using Astro, version 4. Astro is a modern static site gene
    ```bash
    git clone https://github.com/MattEzekiel/marketing-agency-landing-page
    cd gconsulting.com
+   ```
 2. **Install Dependencies:**
    ```bash
    npm install
+   ```
 
 ## Development Commands
+
 1. **Run Astro Dev Server:**
+
    ```bash
    npm run dev
-This command starts a local development server for testing and debugging.
+   This command starts a local development server for testing and debugging.
+
+   ```
 
 2. **Build for Production:**
+
    ```bash
    npm run build
-Use this command to generate a production-ready build of the website.
+   Use this command to generate a production-ready build of the website.
+
+   ```
 
 3. **Preview Production Build:**
-    ```bash
+   ```bash
    npm run preview
-Preview the production build locally before deploying.
+   Preview the production build locally before deploying.
 
 ## Additional Information
+
 For more details on Astro, refer to the [official documentation](https://astro.build/).
 
 Feel free to explore our website and learn more about our digital marketing consultancy.
