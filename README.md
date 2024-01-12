@@ -1,54 +1,44 @@
-# Astro Starter Kit: Basics
+# gconsulting.com - Digital Marketing Consultancy
 
-```sh
-npm create astro@latest -- --template basics
-```
+Welcome to gconsulting.com, the official website for our digital marketing consultancy. This landing page is designed to provide you with a glimpse into the world of digital marketing and the services we offer.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## What is Digital Marketing?
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Digital marketing encompasses various online strategies and channels to promote products, services, and brands. It includes activities such as search engine optimization (SEO), social media marketing, content marketing, email marketing, and more. In a world driven by technology, digital marketing plays a crucial role in reaching and engaging target audiences effectively.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## About This Project
 
-## 🚀 Project Structure
+This website is built using Astro, version 4. Astro is a modern static site generator that allows for faster and more efficient web development. Below are the steps to set up the project using Astro:
 
-Inside of your Astro project, you'll see the following folders and files:
+### Installation
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/MattEzekiel/marketing-agency-landing-page
+   cd gconsulting.com
+2. **Install Dependencies:**
+   ```bash
+   npm install
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Development Commands
+1. **Run Astro Dev Server:**
+   ```bash
+   npm run dev
+This command starts a local development server for testing and debugging.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+2. **Build for Production:**
+   ```bash
+   npm run build
+Use this command to generate a production-ready build of the website.
 
-Any static assets, like images, can be placed in the `public/` directory.
+3. **Preview Production Build:**
+    ```bash
+   npm run preview
+Preview the production build locally before deploying.
 
-## 🧞 Commands
+## Additional Information
+For more details on Astro, refer to the [official documentation](https://astro.build/).
 
-All commands are run from the root of the project, from a terminal:
+Feel free to explore our website and learn more about our digital marketing consultancy.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### gconsulting.com - Your Partner in Digital Excellence
