@@ -9,13 +9,15 @@ interface Props {
 const { src, alt, title, subtitle } = Astro.props;
 ---
 <li>
-    <article>
+    <article class="rounded h-full transform duration-300">
         <picture class="block rounded w-full h-screen mx-auto">
             <source srcset={`${src}.webp`} />
             <img src={`${src}.jpg`} alt={alt} />
         </picture>
-        <h3 class="text-white text-balance text-center text-2xl my-5">{title}</h3>
-        <p class="text-gray-200 text-center text-balance">{subtitle}</p>
+        <div class="p-1.5">
+            <h3 class="text-white text-balance text-center text-2xl my-3">{title}</h3>
+            <p class="text-white pb-5 text-center text-balance">{subtitle}</p>
+        </div>
     </article>
 </li>
 <style>
@@ -38,6 +40,10 @@ const { src, alt, title, subtitle } = Astro.props;
     }
 
     img {
+        height: 100%;
+        width: 100%;
+        object-position: center;
+        object-fit: cover;
         transition: all 0.3s ease-in-out;
     }
 
