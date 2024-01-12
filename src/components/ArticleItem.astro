@@ -21,6 +21,11 @@ const { src, alt, title, subtitle } = Astro.props;
 <style>
     article {
         max-width: 300px;
+        opacity: 0.6;
+        transform: translateY(100px);
+        animation: fadeIn ease-in-out forwards;
+        animation-timeline: view();
+        animation-range: 250px 500px;
     }
 
     picture {
@@ -38,5 +43,12 @@ const { src, alt, title, subtitle } = Astro.props;
 
     article:hover img {
         transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 </style>

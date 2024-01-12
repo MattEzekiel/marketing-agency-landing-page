@@ -21,9 +21,22 @@ import CompanyLogo from "./CompanyLogo.astro";
         min-height: 600px;
     }
 
+    :is(p,a) {
+        opacity: 0;
+        transform: translateY(50px);
+        animation: scroll-watcher ease-in-out 1s forwards;
+    }
+
     @supports not (background-image: url("/assets/images/hero.webp")) {
         #hero {
             background-image: url("/assets/images/hero.jpg");
+        }
+    }
+
+    @keyframes scroll-watcher {
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
     }
 </style>

@@ -42,8 +42,8 @@ const companies = [{
     <!--<div class="swiper-pagination"></div>-->
 
     <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev !text-white"></div>
-    <div class="swiper-button-next !text-white"></div>
+    <div class="swiper-button-prev !text-[rgb(10,73,110)]"></div>
+    <div class="swiper-button-next !text-[rgb(10,73,110)]"></div>
 
     <!-- If we need scrollbar -->
 </div>
@@ -56,6 +56,10 @@ const companies = [{
         direction: 'horizontal',
         loop: true,
         slidesPerView: 1,
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: true,
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',

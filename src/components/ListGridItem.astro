@@ -8,7 +8,7 @@ interface Props {
 const { subtitle, src, alt } = Astro.props;
 ---
 <li class="p-5">
-    <img class="w-full max-w-[100px] mx-auto" src={src} alt={alt} loading="lazy">
+    <img class="w-full max-w-[100px] mx-auto wow animate__fadeInUp" src={src} alt={alt} loading="lazy">
     {subtitle ? (
             <h3 class="text-2xl mt-5 text-center text-pretty font-semibold">{subtitle}</h3>
     ): null}
