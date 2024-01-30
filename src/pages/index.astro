@@ -28,19 +28,33 @@ import Carousel from "../components/Carousel.astro";
         <div class="container mx-auto px-5">
             <h2 class="text-center text-4xl font-semibold text-white mb-10">Servicios</h2>
             <ArticleContainer>
+                <ArticleItem src="/assets/images/pexels-brand" alt="Impulsar marca" title="Consultoría a medida" subtitle="Impulsá tu marca con un asesoramiento personalizado destinado a buscar mejorar tu estrategia de marketing." />
                 <ArticleItem src="/assets/images/pexels" alt="Estrategis personalizadas" title="Estrategia de Marketing" subtitle="Elaboramos estrategias personalizadas para impulsar su presencia en línea." />
                 <ArticleItem src="/assets/images/pexels-stats" alt="Gestión redes sociales" title="Gestión de Redes Sociales" subtitle="Administramos su presencia en redes sociales, creamos contenidos atractivos para que la audiencia interactúe." />
                 <ArticleItem src="/assets/images/pexels-content" alt="Creación de contenidos" title="Creación y curación de contenido" subtitle="Desarrollamos contenido de alta calidad que cautive a su público objetivo y genere un posicionamiento de marca sólido." />
-                <ArticleItem src="/assets/images/pexels-campagn" alt="Campañas" title="Campañas de publicidad Online" subtitle="Creamos y optimizamos campañas publicitarias en línea dirigidas a captar sus clientes potenciales." />
+                <ArticleItem src="/assets/images/pexels-campagn" alt="Campañas" title="Campañas de publicidad Online" subtitle="Creamos y optimizamos campañas publicitarias en línea dirigidas a captar tus clientes potenciales." />
                 <ArticleItem src="/assets/images/pexels-campagn" alt="Campañas" title="Diseño y desarrollo de sitios web" subtitle="Diseñamos y desarrollamos sitios web visualmente atractivos y fáciles de usar para generar conversiones." />
-                <ArticleItem src="/assets/images/pexels-brand" alt="Impulsar marca" title="Consultoría a medida" subtitle="Impulsa tu marca con un asesoramiento personalizado destinado a buscar mejorar tu estrategia de marketing." />
                 <ArticleItem src="/assets/images/email-marketing" alt="Email Marketing campaigns" title="Email Marketing" subtitle=" Diseño de estrategias de automation, gestión de bases de datos y envíos con mensajes personalizados y relevantes para la fidelización de clientes." />
             </ArticleContainer>
         </div>
     </section>
+    <section class="pt-20">
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-semibold mb-5 text-center md:text-left text-balance">Transformamos empresas de todo el mundo</h2>
+            <p class="text-pretty text-center md:text-left mb-10">Generando métodos y estrategias infalibles de crecimiento a medida para nuestros clientes.</p>
+            <picture>
+                <img src="/assets/images/ww-map.svg" alt="Mapa, operamos en México, Perú, Chile y Argentina" class="w-full shadow-2xl rounded">
+            </picture>
+        </div>
+    </section>
+    <!--<section class="py-20 bg-gray-600">
+        <div class="container mx-auto px-5 relative">
+            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left text-balance text-white">Proyectos y casos de éxito</h2>
+        </div>
+    </section>-->
     <section class="pt-20 relative">
         <div class="container mx-auto px-5 relative">
-            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left text-balance">Proyectos y casos de éxito</h2>
+            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left text-balance">Confían en nosotros</h2>
             <Carousel />
         </div>
     </section>
@@ -48,8 +62,7 @@ import Carousel from "../components/Carousel.astro";
         <div class="container mx-auto px-5 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:mt-20 pb-20">
             <Contact />
             <div class="md:mt-4">
-                <h2 class="text-4xl font-semibold mb-10">Contacto</h2>
-                <p class="text-pretty">Contactame y comencemos una conversación que desafíe el status quo.</p>
+                <h2 class="text-2xl font-semibold mb-10 text-balance">¡Contáctanos y empecemos una conversación que desafíe el statu quo!</h2>
             </div>
         </div>
     </section>
