@@ -1,0 +1,31 @@
+---
+import SVG from './SvgIcon.astro';
+const countries = ['mexico','peru','chile','argentina'];
+---
+<aside class="w-full shadow-2xl rounded overflow-hidden">
+    <hgroup class="sr-only">
+        {countries.map(country => (
+                <h3 class="capitalize">{country}</h3>
+        ))}
+    </hgroup>
+    <SVG />
+</aside>
+<style is:global>
+    path {
+        transition: fill 0.3s ease-in-out;
+    }
+
+    path#mexico:hover,
+    path#peru:hover,
+    #chile_1_:hover > path,
+    #argentina_1_:hover > path {
+        fill: #0274A8;
+    }
+
+    #argentina-dot,
+    #chile-dot_1_,
+    #peru-dot,
+    #mexico-dot {
+
+    }
+</style>
