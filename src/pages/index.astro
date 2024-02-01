@@ -7,6 +7,7 @@ import ArticleContainer from "../components/ArticleContainer.astro";
 import ArticleItem from "../components/ArticleItem.astro";
 import Contact from "../components/Contact.astro";
 import Carousel from "../components/Carousel.astro";
+import Map from "../components/Map/Map.Astro";
 ---
 <Main>
     <Hero />
@@ -42,9 +43,7 @@ import Carousel from "../components/Carousel.astro";
         <div class="container mx-auto px-5">
             <h2 class="text-4xl font-semibold mb-5 text-center md:text-left text-balance">Transformamos empresas de todo el mundo</h2>
             <p class="text-pretty text-center md:text-left mb-10">Generando métodos y estrategias infalibles de crecimiento a medida para nuestros clientes.</p>
-            <picture>
-                <img src="/assets/images/ww-map.svg" alt="Mapa, operamos en México, Perú, Chile y Argentina" class="w-full shadow-2xl rounded">
-            </picture>
+            <Map />
         </div>
     </section>
     <section class="py-20 bg-gray-600">
