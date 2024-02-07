@@ -44,6 +44,7 @@ This website is built using Astro, version 4. Astro is a modern static site gene
    ```bash
    npm run preview
    Preview the production build locally before deploying.
+   ```
 
 ## Additional Information
 
