@@ -1,0 +1,9 @@
+---
+interface Props {
+  src: string,
+  alt: string,
+}
+
+const { src, alt } = Astro.props;
+---
+<img class="block rounded mx-auto max-w-[800px]" src={src} alt={alt} />
