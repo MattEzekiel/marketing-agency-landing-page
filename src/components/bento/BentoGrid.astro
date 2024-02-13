@@ -68,15 +68,31 @@ const successCases = [
 ];
 ---
 <ul class="container grid lg:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto">
-  {successCases.map((successCase, index) => (
-    <li class={`relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden group ${index % 4 === 0 || index % 4 === 3 ? 'col-span-10 lg:col-span-6' : 'col-span-10 lg:col-span-4'} ${index % 4 === 0 || index % 4 === 2 ? 'bg-aliceblue' : 'bg-cornflowerblue'}`}>
-      <BentoItem
-        title={successCase.title}
-        client={successCase.client}
-        background={successCase.background}
-      >
-        {successCase.component && <successCase.component />}
-      </BentoItem>
-    </li>
-  ))}
+  {successCases.map((successCase, index) => {
+    if (successCases.length - 1 === index) {
+      return (
+        <li class={"relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden group lg:col-span-10"}>
+          <BentoItem
+            title={successCase.title}
+            client={successCase.client}
+            background={successCase.background}
+          >
+            {successCase.component && <successCase.component />}
+          </BentoItem>
+        </li>
+      )
+    } else {
+      return (
+        <li class={`relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden group ${index % 4 === 0 || index % 4 === 3 ? 'col-span-10 lg:col-span-6' : 'col-span-10 lg:col-span-4'} ${index % 4 === 0 || index % 4 === 2 ? 'bg-aliceblue' : 'bg-cornflowerblue'}`}>
+          <BentoItem
+            title={successCase.title}
+            client={successCase.client}
+            background={successCase.background}
+          >
+            {successCase.component && <successCase.component />}
+          </BentoItem>
+        </li>
+      )
+    }
+  })}
 </ul>
