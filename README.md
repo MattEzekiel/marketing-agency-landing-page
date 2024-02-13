@@ -27,24 +27,26 @@ This website is built using Astro, version 4. Astro is a modern static site gene
 1. **Run Astro Dev Server:**
 
    ```bash
-   npm run dev
+   astro dev
+   ```
+   or
+
+   ```bash
+   astro start
+   ```
    This command starts a local development server for testing and debugging.
 
-   ```
 
 2. **Build for Production:**
 
    ```bash
-   npm run build
-   Use this command to generate a production-ready build of the website.
-
+   astro build
    ```
+   Use this command to generate a production-ready build of the website.
 
 3. **Preview Production Build:**
    ```bash
-   npm run preview
-   Preview the production build locally before deploying.
-   ```
+   astro preview
 
 ## Additional Information
 
