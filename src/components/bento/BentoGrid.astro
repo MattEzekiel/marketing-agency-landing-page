@@ -1,0 +1,98 @@
+---
+import BentoItem from './BentoItem.astro';
+import Case1 from '../cases/Case1.astro';
+import Case2 from '../cases/Case2.astro';
+import Case3 from '../cases/Case3.astro';
+import Case4 from '../cases/Case4.astro';
+import Case5 from '../cases/Case5.astro';
+import Case6 from '../cases/Case6.astro';
+import Case7 from '../cases/Case7.astro';
+import Case8 from '../cases/Case8.astro';
+import Case9 from '../cases/Case9.astro';
+
+const successCases = [
+  {
+    title: 'Social Media Strategy and Google Ads',
+    client: 'Club Spa',
+    background: 'case-1',
+    component: Case1,
+  },
+  {
+    title: 'Employer Branding Video',
+    client: 'Real Trends',
+    background: 'case-2',
+    component: Case2,
+  },
+  {
+    title: 'Continuing Medical Education Portal',
+    client: 'Laboratorio',
+    background: 'case-3',
+    component: Case3,
+  },
+  {
+    title: 'Marketing Consulting',
+    client: 'Alma Loft',
+    background: 'case-4',
+    component: Case4,
+  },
+  {
+    title: 'Google Ads',
+    client: 'Ozone Lifestyle & Maria T',
+    background: 'case-5',
+    component: Case5,
+  },
+  {
+    title: 'Google Ads y Estrategia de eMail Marketing',
+    client: 'BAS Indumentaria',
+    background: 'case-6',
+    component: Case6,
+  },
+  {
+    title: 'Consultoría de Marketing',
+    client: 'flowandbliss',
+    background: 'case-7',
+    component: Case7,
+  },
+  {
+    title: 'Real Trends',
+    client: 'Looker Studio Dashboards',
+    background: 'case-8',
+    component: Case8,
+  },
+  {
+    title: 'Estrategia Growth eCommerce',
+    client: 'Walmart',
+    background: 'case-9',
+    component: Case9,
+  },
+];
+---
+<ul class="container grid lg:grid-cols-10 auto-rows-[30rem] gap-4 mx-auto">
+  {successCases.map((successCase, index) => {
+    if (successCases.length - 1 === index) {
+      return (
+        <li class={"relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden group col-span-10"}>
+          <BentoItem
+            title={successCase.title}
+            client={successCase.client}
+            background={successCase.background}
+          >
+            {successCase.component && <successCase.component />}
+          </BentoItem>
+        </li>
+      )
+    } else {
+      return (
+        <li class={`relative rounded-xl backdrop-blur-md border border-black/10 shadow-inner shadow-white/10 overflow-hidden group ${index % 4 === 0 || index % 4 === 3 ? 'col-span-10 lg:col-span-6' : 'col-span-10 lg:col-span-4'} ${index % 4 === 0 || index % 4 === 2 ? 'bg-aliceblue' : 'bg-cornflowerblue'}`}>
+          <BentoItem
+            title={successCase.title}
+            client={successCase.client}
+            background={successCase.background}
+          >
+            {successCase.component && <successCase.component />}
+          </BentoItem>
+        </li>
+      )
+    }
+  })}
+</ul>

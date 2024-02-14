@@ -8,6 +8,7 @@ import ArticleItem from "../components/ArticleItem.astro";
 import Contact from "../components/Contact.astro";
 import Carousel from "../components/Carousel.astro";
 import Map from "../components/map/MapSVG.astro";
+import BentoGrid from '../components/bento/BentoGrid.astro';
 ---
 <Main>
     <Hero />
@@ -25,7 +26,8 @@ import Map from "../components/map/MapSVG.astro";
             <ListGridItem src="/assets/images/thumb-up-filled.svg" alt="Like" subtitle="Estrategias de marketing personalizadas para cada negocio" />
         </ListGridContainer>
     </section>
-    <section class="py-20 bg-gray-600 relative">
+    <section class="py-20 relative">
+        <div aria-hidden="true" class="absolute top-0 z-[-2] h-full w-screen max-w-full bg-[#000000] bg-[radial-gradient(#ffffff33_1px,#00091d_1px)] bg-[size:20px_20px]"></div>
         <div class="container mx-auto px-5">
             <h2 class="text-center text-4xl font-semibold text-white mb-10">Servicios</h2>
             <ArticleContainer>
@@ -52,6 +54,17 @@ import Map from "../components/map/MapSVG.astro";
             <Carousel />
         </div>
     </section>
+    <section id="projects" class="py-20 md:mt-20 mt-10 relative overflow-y-hidden max-h-[700px] transition duration-300">
+        <div aria-hidden="true" class="absolute inset-0 -z-10 h-full w-full bg-white bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="container mx-auto px-5">
+            <h2 class="text-4xl font-semibold mb-10 text-center md:text-left text-balance">Proyectos y casos de éxito</h2>
+            <BentoGrid />
+        </div>
+        <div aria-hidden="true" class="absolute bottom-0 bg-[linear-gradient(to_top,_rgba(255,255,255,1)_0%,rgba(255,255,255,0)_100%)] w-full h-[200px]"></div>
+        <div class="container mx-auto sticky bottom-[-80px] z-10 px-5">
+            <button id="display-more" type="button" class="uppercase bg-sky-500 hover:bg-sky-700 transition-colors duration-300 px-10 py-2.5 text-white rounded lg:w-fit w-full mx-auto block">Ver más</button>
+        </div>
+    </section>
     <section id="contact" class="pt-5 relative">
         <div class="container mx-auto px-5 flex flex-col-reverse md:grid md:grid-cols-2 gap-10 md:mt-20 pb-20">
             <Contact />
@@ -61,3 +74,17 @@ import Map from "../components/map/MapSVG.astro";
         </div>
     </section>
 </Main>
+<script>
+    import "@justinribeiro/lite-youtube";
+</script>
+<script>
+    (function() {
+        const button = document.querySelector('#display-more');
+        button.addEventListener('click', showMore);
+
+        function showMore() {
+            document.querySelector('#projects').classList.remove('max-h-[700px]');
+            this.remove();
+        }
+    })();
+</script>

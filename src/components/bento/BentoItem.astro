@@ -1,0 +1,57 @@
+---
+import Case1 from '../cases/Case1.astro';
+interface Props {
+  title: string,
+  client: string,
+  background: string,
+}
+
+const { title, client, background } = Astro.props;
+---
+<article id={`article-${background}`} class="h-full relative group">
+  <picture aria-hidden="true" class="select-none absolute h-full w-full">
+    <source srcset={`/assets/success-cases/${background}/${background}.webp`} type="image/webp">
+    <source srcset={`/assets/success-cases/${background}/${background}.jpg`} type="image/jpeg">
+    <img src={`/assets/success-cases/${background}/${background}.jpg`} alt={`Background ${title}`} class="w-full h-full block object-center object-cover">
+  </picture>
+  <div class="absolute top-0 opacity-0 group-hover:opacity-100 transition duration-300 bg-black/30 backdrop-blur h-full w-full flex items-center justify-center flex-col px-10 py-5">
+    <h3 class="text-white font-semibold md:text-4xl text-xl text-center text-balance">{title}</h3>
+    <span class="block mt-5 text-white text-lg md:text-xl text-center">Cliente: {client}</span>
+    <button type="button" class="border border-white rounded text-white hover:text-black hover:bg-white uppercase px-5 py-2.5 font-semibold mt-5 transition-colors duration-300">Ver caso</button>
+  </div>
+</article>
+<dialog id={`modal-${background}`} class="bg-white/75 p-10 rounded-2xl shadow open:backdrop-blur w-full h-full overflow-hidden">
+  <div class="bg-white rounded-2xl shadow p-10 relative w-fit mx-auto overflow-hidden">
+    <button type="button" aria-label="cerrar" class="absolute right-0 top-0 font-semibold p-5 text-2xl">X</button>
+    <slot />
+  </div>
+</dialog>
+<script define:vars={{background}}>
+  (function() {
+    const modal = document.querySelector(`#modal-${background}`);
+    const articleButton = document.querySelector(`#article-${background} button`);
+    const closeButton = document.querySelector(`#modal-${background} button`);
+    const iframeVideo = document.querySelector(`#${background}-iframe`);
+    const video = document.querySelector(`#${background}-video`);
+
+    articleButton.addEventListener('click', () => {
+      modal.showModal();
+      document.body.style.overflow = "hidden";
+    });
+
+    closeButton.addEventListener('click', () => {
+      if (iframeVideo) {
+        const videoId = iframeVideo.videoId;
+        iframeVideo.videoId = '';
+        iframeVideo.videoId = videoId;
+      }
+
+      if (video) {
+        video.pause();
+      }
+
+      document.body.removeAttribute('style');
+      modal.close();
+    });
+  })();
+</script>
