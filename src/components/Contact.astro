@@ -52,20 +52,19 @@
 
         if (errors.length) return;
 
-        const url = '/mail/mail.php';
-        // TODO: Crear esto
-        return;
-
         disableInputs();
         try {
-            const response = await fetch(url, {
+            const response = await fetch('/api/sendEmail.json', {
                 method: 'POST',
-                body: JSON.stringify({
-                    name,
-                    email,
-                    message,
-                }),
                 headers: {'Content-Type': 'application/json; charset=utf-8'},
+                body: JSON.stringify({
+                    text: `Nombre: ${name}, email: ${email}, mensaje: ${message}`,
+                    html: `<ul>
+                              <li>Nombre del contacto: ${name}</li>
+                              <li>Email del contacto: ${email}</li>
+                              <li>Mensaje: <br /> ${message}</li>
+                          </ul>`,
+                }),
             });
             const result = await response.json();
             if (result.success) {
